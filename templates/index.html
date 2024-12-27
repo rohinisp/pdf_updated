@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Content Extractor</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="h4 mb-0">Document Content Extractor</h1>
+                        <p class="text-muted mb-0">Extract and analyze content from PDFs and web pages</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- URL Input -->
+                        <div class="mb-4">
+                            <h5>Extract from URL</h5>
+                            <div class="input-group">
+                                <input type="url" id="documentUrl" class="form-control" placeholder="Enter PDF or webpage URL">
+                                <button class="btn btn-secondary" onclick="extractFromUrl()">
+                                    <i class="bi bi-link"></i> Extract
+                                </button>
+                            </div>
+                            <small class="text-muted">Supports both PDF files and web pages</small>
+                        </div>
+
+                        <!-- File Upload -->
+                        <div class="mb-4">
+                            <h5>Upload PDF File</h5>
+                            <div class="input-group">
+                                <input type="file" class="form-control" id="pdfFile" accept=".pdf">
+                                <button class="btn btn-secondary" onclick="extractFromFile()">
+                                    <i class="bi bi-upload"></i> Extract
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Optional Question -->
+                        <div class="mb-4">
+                            <h5>Ask a Question (Optional)</h5>
+                            <div class="input-group">
+                                <input type="text" id="question" class="form-control" 
+                                       placeholder="Ask a question about the content">
+                            </div>
+                        </div>
+
+                        <!-- Status and Results -->
+                        <div id="status" class="alert alert-info d-none"></div>
+                        <div id="error" class="alert alert-danger d-none"></div>
+
+                        <!-- Answer Display -->
+                        <div id="answerSection" class="mb-4 d-none">
+                            <h5>Answer</h5>
+                            <div id="answerContent" class="card">
+                                <div class="card-body"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="extractedText" class="form-label">Extracted Content</label>
+                            <textarea id="extractedText" class="form-control" rows="10" readonly></textarea>
+                        </div>
+                        <button class="btn btn-secondary" onclick="copyText()">
+                            <i class="bi bi-clipboard"></i> Copy Text
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
